@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es5",
+    "lib": [
+      "es2015",
+      "es2016.array.include",
+      "dom",
+    ],
+    "module": "es6",
+    "sourceMap": true,
+    "strictPropertyInitialization": false
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
