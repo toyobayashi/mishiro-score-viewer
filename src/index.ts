@@ -26,11 +26,24 @@ function createScore (csv: string) {
   return { fullCombo, score }
 }
 
+function getQuery (key: string) {
+  if (!window.location.search) return undefined
+  const obj: { [key: string]: string } = {}
+  const keyvalue = window.location.search.substr(1).split('&')
+  for (let i = 0; i < keyvalue.length; i++) {
+    const [key, value] = keyvalue[i].split('=')
+    obj[key] = value
+  }
+  return obj[key]
+}
+
 async function main () {
-  const data = (await axios.get('./res/score.csv')).data
+  const id = getQuery('id') || '9018'
+  const difficulty = getQuery('difficulty') || '5'
+  const data = (await axios.get(`./res/${id}-${difficulty}.csv`)).data
   const { fullCombo, score } = createScore(data)
   ScoreViewer.main({
-    src: './res/live.mp3',
+    src: `./res/${id}.mp3`,
     fullCombo,
     score
   })

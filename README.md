@@ -16,4 +16,10 @@ $ npm install
 $ npm start
 ```
 
-Replace `docs/res/live.mp3` and `docs/res/score.csv` to view different score.
+Place live song (.mp3) and score (.csv) in `docs/res`,  
+rename mp3 to `${id}.mp3`,  
+rename csv to `${id}-${difficulty}.csv`,  
+then open `http://localhost:9080/?id=${id}&difficulty=${difficulty}`
+
+Default `id`: `9018`  
+Default `difficulty`: `5`
