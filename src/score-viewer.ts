@@ -23,16 +23,16 @@ interface Option {
 class ScoreViewer {
 
   public static main (song: Song<ScoreNote>): void {
-    const background = document.getElementById('bg') as HTMLImageElement
+    // const background = document.getElementById('bg') as HTMLImageElement
 
-    window.addEventListener('resize', () => {
-      const isYoko = (window.innerWidth / window.innerHeight >= 1280 / 824)
-      if (isYoko) {
-        background.className = 'img-middle'
-      } else {
-        background.className = 'img-center'
-      }
-    }, false)
+    // window.addEventListener('resize', () => {
+    //   const isYoko = (window.innerWidth / window.innerHeight >= 1280 / 824)
+    //   if (isYoko) {
+    //     background.className = 'img-middle'
+    //   } else {
+    //     background.className = 'img-center'
+    //   }
+    // }, false)
 
     // window.addEventListener('beforeunload', () => {
     //   const mainwindow = remote.BrowserWindow.fromId(ipcRenderer.sendSync('mainWindowId'))
@@ -338,7 +338,7 @@ class ScoreViewer {
         // }
         // const firstY = this.saveCanvas.height - (60 / this.song.bpm * globalInstance.saveSpeed * 60) / globalInstance.scale + globalInstance.noteHeight / 2 / globalInstance.scale
         const firstY = this.saveCanvas.height - 10
-        this.saveCtx.font = '13px -apple-system, BlinkMacSystemFont, Segoe WPC,Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif'
+        this.saveCtx.font = '12px -apple-system, BlinkMacSystemFont, Segoe WPC,Segoe UI, HelveticaNeue-Light, Noto Sans, Microsoft YaHei, PingFang SC, Hiragino Sans GB, Source Han Sans SC, Source Han Sans CN, Source Han Sans, sans-serif'
         this.saveCtx.fillStyle = '#fff'
         this.saveCtx.textAlign = 'center'
         this.saveCtx.fillText('https://github.com/toyobayashi/mishiro-score-viewer', this.saveCanvas.width / 2, firstY - 7)
@@ -415,6 +415,7 @@ class ScoreViewer {
   }
 
   private _resolveDOM (el: HTMLElement) {
+    const background = document.getElementById('bg') as HTMLImageElement
     this.frontCanvas = document.createElement('canvas')
     this.backCanvas = document.createElement('canvas')
     this.saveCanvas = document.createElement('canvas')
@@ -423,7 +424,8 @@ class ScoreViewer {
 
     this.saveCanvas.width = ScoreViewer.CANVAS_WIDTH / globalInstance.scale
 
-    this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-center'
+    // this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-center'
+    resize.call(this)
 
     this.pauseButton = document.createElement('button')
     this.pauseButton.innerHTML = 'play'
@@ -523,6 +525,22 @@ class ScoreViewer {
       this.rangeInput.value = this.audio.currentTime.toString()
       this.rangeInput.style.backgroundSize = 100 * (this.audio.currentTime / this.audio.duration) + '% 100%'
     })
+
+    window.addEventListener('resize', resize.bind(this), false)
+
+    function resize (this: ScoreViewer) {
+      if (window.innerWidth / window.innerHeight >= 1280 / 824) {
+        background.className = 'img-middle'
+      } else {
+        background.className = 'img-center'
+      }
+
+      if (window.innerWidth / window.innerHeight >= ScoreViewer.CANVAS_WIDTH / ScoreViewer.CANVAS_HEIGHT) {
+        this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-center'
+      } else {
+        this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-middle'
+      }
+    }
   }
 }
 
