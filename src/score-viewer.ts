@@ -407,7 +407,7 @@ class ScoreViewer {
   }
 
   private _resolveDOM (el: HTMLElement) {
-    const background = document.getElementById('bg') as HTMLImageElement
+    // const background = document.getElementById('bg') as HTMLImageElement
     this.frontCanvas = document.createElement('canvas')
     this.backCanvas = document.createElement('canvas')
     this.saveCanvas = document.createElement('canvas')
@@ -521,11 +521,11 @@ class ScoreViewer {
     window.addEventListener('resize', resize.bind(this), false)
 
     function resize (this: ScoreViewer) {
-      if (window.innerWidth / window.innerHeight >= 1280 / 824) {
-        background.className = 'img-middle'
-      } else {
-        background.className = 'img-center'
-      }
+      // if (window.innerWidth / window.innerHeight >= 1280 / 824) {
+      //   background.className = 'img-middle'
+      // } else {
+      //   background.className = 'img-center'
+      // }
 
       if (window.innerWidth / window.innerHeight >= ScoreViewer.CANVAS_WIDTH / ScoreViewer.CANVAS_HEIGHT) {
         this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-center'
