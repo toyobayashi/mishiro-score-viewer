@@ -6,7 +6,6 @@ import TapNote from './tap-note'
 import FlipNote from './flip-note'
 import LongNote from './long-note'
 import LongMoveNote from './long-move-note'
-import { getQuery, createScore } from './util'
 
 interface Song<ScoreType> {
   src: string
@@ -26,10 +25,10 @@ let difficulty = '5'
 class ScoreViewer {
 
   public static async main (): Promise<void> {
-    id = getQuery('id') || '9018'
-    difficulty = getQuery('difficulty') || '5'
+    id = Global.getQuery('id') || '9018'
+    difficulty = Global.getQuery('difficulty') || '5'
     const data = (await axios.get(`./res/${id}-${difficulty}.csv`)).data
-    const { fullCombo, score } = createScore(data)
+    const { fullCombo, score } = Global.createScore(data)
     ScoreViewer.init({
       src: `./res/${id}.mp3`,
       fullCombo,
@@ -54,10 +53,10 @@ class ScoreViewer {
   private static CANVAS_HEIGHT = 720
   public static X: number[] = [238 - 206, 414 - 206, 589 - 206, 764 - 206, 937 - 206]
   private static BOTTOM = 20
-  public static TOP_TO_TARGET_POSITION = ScoreViewer.CANVAS_HEIGHT - ScoreViewer.BOTTOM - 114 + 6
+  public static TOP_TO_TARGET_POSITION = ScoreViewer.CANVAS_HEIGHT - ScoreViewer.BOTTOM - (globalInstance.backPng ? globalInstance.backPng.height : 0) + (globalInstance.backPng ? Math.round((globalInstance.noteHeight - globalInstance.backPng.height) / 2) : 0)/*  + 114 + 6 */
 
   public frontCanvas: HTMLCanvasElement
-  public backCanvas: HTMLCanvasElement
+  public backCanvas?: HTMLCanvasElement
   public saveCanvas: HTMLCanvasElement
   public frontCtx: CanvasRenderingContext2D
   public backCtx: CanvasRenderingContext2D
@@ -77,7 +76,7 @@ class ScoreViewer {
   private _isPaused: boolean = true
   private _t: number
   private _isClean = true
-  private _comboDom: HTMLDivElement
+  private _comboDom: HTMLSpanElement
 
   // private _preCalculation: { timeRange: number }
 
@@ -409,15 +408,13 @@ class ScoreViewer {
   private _resolveDOM (el: HTMLElement) {
     // const background = document.getElementById('bg') as HTMLImageElement
     this.frontCanvas = document.createElement('canvas')
-    this.backCanvas = document.createElement('canvas')
     this.saveCanvas = document.createElement('canvas')
-    this.frontCanvas.width = this.backCanvas.width = ScoreViewer.CANVAS_WIDTH
-    this.frontCanvas.height = this.backCanvas.height = ScoreViewer.CANVAS_HEIGHT
+    this.frontCanvas.width = ScoreViewer.CANVAS_WIDTH
+    this.frontCanvas.height = ScoreViewer.CANVAS_HEIGHT
 
     this.saveCanvas.width = ScoreViewer.CANVAS_WIDTH / globalInstance.scale
 
     // this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-center'
-    resize.call(this)
 
     this.pauseButton = document.createElement('button')
     this.pauseButton.innerHTML = 'play'
@@ -475,22 +472,38 @@ class ScoreViewer {
       this.options.speed = Number((ev.target as HTMLInputElement).value)
     })
 
-    el.appendChild(this.backCanvas)
+    const comboText = document.createElement('span')
+    this._comboDom = document.createElement('span')
+    this._comboDom.className = 'combo-number'
+    this._comboDom.innerHTML = '0'
+    comboText.className = 'combo-text'
+    comboText.innerHTML = 'combo'
+    const comboWrap = document.createElement('div')
+    comboWrap.className = 'combo'
+    comboWrap.appendChild(this._comboDom)
+    comboWrap.appendChild(comboText)
+
+    if (globalInstance.backPng && globalInstance.backPng.src) {
+      this.backCanvas = document.createElement('canvas')
+      this.backCanvas.width = ScoreViewer.CANVAS_WIDTH
+      this.backCanvas.height = ScoreViewer.CANVAS_HEIGHT
+      this.backCtx = this.backCanvas.getContext('2d') as CanvasRenderingContext2D
+      const self = this
+      const liveIcon = Global.newImage(globalInstance.backPng.src)
+      liveIcon.addEventListener('load', function () {
+        self.backCtx.drawImage(this, Math.round((ScoreViewer.CANVAS_WIDTH - this.width) / 2), ScoreViewer.CANVAS_HEIGHT - ScoreViewer.BOTTOM - this.height)
+      }, false)
+      el.appendChild(this.backCanvas)
+    }
     el.appendChild(this.frontCanvas)
     el.appendChild(this.pauseButton)
     el.appendChild(this.saveButton)
     el.appendChild(this.rangeInput)
     el.appendChild(this.speedInput)
-    this._comboDom = document.getElementById('combo') as HTMLDivElement
+    el.appendChild(comboWrap)
 
     this.frontCtx = this.frontCanvas.getContext('2d') as CanvasRenderingContext2D
-    this.backCtx = this.backCanvas.getContext('2d') as CanvasRenderingContext2D
     this.frontCtx.fillStyle = 'rgba(255, 255, 255, 0.66)'
-
-    const liveIcon = Global.newImage('./img/live_icon_857x114.png')
-    liveIcon.addEventListener('load', () => {
-      this.backCtx.drawImage(liveIcon, 5, ScoreViewer.CANVAS_HEIGHT - ScoreViewer.BOTTOM - 114)
-    }, false)
 
     this.audio.addEventListener('canplay', () => {
       this._isReady = true
@@ -518,21 +531,24 @@ class ScoreViewer {
       this.rangeInput.style.backgroundSize = 100 * (this.audio.currentTime / this.audio.duration) + '% 100%'
     })
 
-    window.addEventListener('resize', resize.bind(this), false)
-
-    function resize (this: ScoreViewer) {
+    const resize = () => {
       // if (window.innerWidth / window.innerHeight >= 1280 / 824) {
       //   background.className = 'img-middle'
       // } else {
       //   background.className = 'img-center'
       // }
-
       if (window.innerWidth / window.innerHeight >= ScoreViewer.CANVAS_WIDTH / ScoreViewer.CANVAS_HEIGHT) {
-        this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-center'
+        this.frontCanvas.className = 'canvas canvas-center'
+        if (this.backCanvas) this.backCanvas.className = 'canvas canvas-center'
       } else {
-        this.frontCanvas.className = this.backCanvas.className = 'canvas canvas-middle'
+        this.frontCanvas.className = 'canvas canvas-middle'
+        if (this.backCanvas) this.backCanvas.className = 'canvas canvas-middle'
       }
     }
+
+    resize()
+
+    window.addEventListener('resize', resize, false)
   }
 }
 
