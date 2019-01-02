@@ -389,7 +389,12 @@ class ScoreViewer {
       const a = document.createElement('a')
       a.download = `${id}-${difficulty}.png`
       a.href = URL.createObjectURL(blob)
-      a.click()
+      const event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+      })
+      a.dispatchEvent(event)
       a.remove()
     }
 
