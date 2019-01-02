@@ -1,5 +1,4 @@
-// import { relative, parse } from 'path'
-// import { writeFile } from 'fs-extra'
+import axios from 'axios'
 import Global, { globalInstance } from './global'
 import { ScoreNote } from './types'
 import Note, { ScoreNoteWithNoteInstance } from './note'
@@ -7,6 +6,7 @@ import TapNote from './tap-note'
 import FlipNote from './flip-note'
 import LongNote from './long-note'
 import LongMoveNote from './long-move-note'
+import { getQuery, createScore } from './util'
 
 interface Song<ScoreType> {
   src: string
@@ -20,41 +20,21 @@ interface Option {
   speed: number
 }
 
+let id = '9018'
+let difficulty = '5'
+
 class ScoreViewer {
 
-  public static main (song: Song<ScoreNote>): void {
-    // const background = document.getElementById('bg') as HTMLImageElement
-
-    // window.addEventListener('resize', () => {
-    //   const isYoko = (window.innerWidth / window.innerHeight >= 1280 / 824)
-    //   if (isYoko) {
-    //     background.className = 'img-middle'
-    //   } else {
-    //     background.className = 'img-center'
-    //   }
-    // }, false)
-
-    // window.addEventListener('beforeunload', () => {
-    //   const mainwindow = remote.BrowserWindow.fromId(ipcRenderer.sendSync('mainWindowId'))
-    //   mainwindow.webContents.send('liveEnd', null, false)
-    // })
-
-    // const song = ipcRenderer.sendSync('getSong')
-    if (!song) return
-
-    // console.log(song)
-    // let name = parse(song.src).name.substr(parse(song.src).name.indexOf('-') + 1)
-    // let name = 'お願い！シンデレラ'
-    // document.getElementsByTagName('title')[0].innerHTML = name
-    /* const sv =  */ScoreViewer.init(song, document.body)
-    // sv.start()
-    // if (process.env.NODE_ENV !== 'production') {
-    //   (document.getElementById('debug') as HTMLButtonElement).addEventListener('click', () => {
-    //     const base64str = sv.frontCanvas.toDataURL('image/png').substr(22)
-    //     writeFile(getPath.scoreDir(name + '.png'), Buffer.from(base64str, 'base64'))
-    //     // console.log(sv.frontCanvas.toDataURL('image/png').substr(22))
-    //   }, false)
-    // }
+  public static async main (): Promise<void> {
+    id = getQuery('id') || '9018'
+    difficulty = getQuery('difficulty') || '5'
+    const data = (await axios.get(`./res/${id}-${difficulty}.csv`)).data
+    const { fullCombo, score } = createScore(data)
+    ScoreViewer.init({
+      src: `./res/${id}.mp3`,
+      fullCombo,
+      score
+    }, document.body)
   }
 
   private static _instance: ScoreViewer | null = null
@@ -303,17 +283,21 @@ class ScoreViewer {
     return undefined
   }
 
-  private _saveScore () {
+  private async _saveScore () {
     if (!this._isReady) {
-      setTimeout(() => {
-        this._saveScore()
+      setTimeout(async () => {
+        await this._saveScore()
       }, 100)
       return
     }
 
-    // let name = parse(this.song.src).name.substr(parse(this.song.src).name.indexOf('-') + 1)
+    const toBlob = () => new Promise<Blob | null>((resolve) => {
+      this.saveCanvas.toBlob((blob) => {
+        resolve(blob)
+      }, 'image/png', 1)
+    })
 
-    const _drawAndSave = () => {
+    const _drawAndSave = async () => {
       if (!this._isReadyToSave) {
         this.stop()
         this.saveCanvas.height = globalInstance.saveSpeed * 60 * this.audio.duration / globalInstance.scale
@@ -385,11 +369,12 @@ class ScoreViewer {
 
       }
 
-      const base64str = this.saveCanvas.toDataURL('image/png')
-      if (base64str === 'data:,') {
+      // const base64str = this.saveCanvas.toDataURL('image/png')
+      const blob = await toBlob()
+      if (!blob) {
         const OLD_SAVE_SPEED = globalInstance.saveSpeed
         globalInstance.saveSpeed--
-        _drawAndSave()
+        await _drawAndSave()
         globalInstance.saveSpeed = OLD_SAVE_SPEED
         return
       }
@@ -400,13 +385,15 @@ class ScoreViewer {
       // writeFile(filename, Buffer.from(base64str.substr(22), 'base64'), (err) => {
       //   if (err) alert(err.message)
       // })
-      const savelink = document.createElement('a')
-      savelink.href = base64str.replace('image/png', 'image/octet-stream')
-      savelink.download = 'score.png'
-      savelink.click()
-      // window.location.href = base64str.replace('image/png', 'image/octet-stream')
+
+      const a = document.createElement('a')
+      a.download = `${id}-${difficulty}.png`
+      a.href = URL.createObjectURL(blob)
+      a.click()
+      a.remove()
     }
-    _drawAndSave()
+
+    await _drawAndSave()
 
     // remote.dialog.showSaveDialog({
     //   title: 'Save Score - ' + name + '-' + this.song.difficulty,
