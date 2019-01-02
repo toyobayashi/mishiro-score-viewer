@@ -53,7 +53,7 @@ class ScoreViewer {
   private static CANVAS_HEIGHT = 720
   public static X: number[] = [238 - 206, 414 - 206, 589 - 206, 764 - 206, 937 - 206]
   private static BOTTOM = 20
-  public static TOP_TO_TARGET_POSITION = ScoreViewer.CANVAS_HEIGHT - ScoreViewer.BOTTOM - (globalInstance.backPng ? globalInstance.backPng.height : 0) + (globalInstance.backPng ? Math.round((globalInstance.noteHeight - globalInstance.backPng.height) / 2) : 0)/*  + 114 + 6 */
+  public static TOP_TO_TARGET_POSITION = ScoreViewer.CANVAS_HEIGHT - ScoreViewer.BOTTOM - (globalInstance.backPng ? globalInstance.backPng.height : 0) + (globalInstance.backPng ? Math.round((globalInstance.backPng.height - globalInstance.noteHeight) / 2) : 0)/*  + 114 + 6 */
 
   public frontCanvas: HTMLCanvasElement
   public backCanvas?: HTMLCanvasElement
