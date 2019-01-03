@@ -19,14 +19,14 @@ interface Option {
   speed: number
 }
 
-let id = '9018'
-let difficulty = '5'
+let id = '2018'
+let difficulty = '4'
 
 class ScoreViewer {
 
   public static async main (): Promise<void> {
-    id = Global.getQuery('id') || '9018'
-    difficulty = Global.getQuery('difficulty') || '5'
+    id = Global.getQuery('id') || '2018'
+    difficulty = Global.getQuery('difficulty') || '4'
     const data = (await axios.get(`./res/${id}-${difficulty}.csv`)).data
     const { fullCombo, score } = Global.createScore(data)
     ScoreViewer.init({

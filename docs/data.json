@@ -1,0 +1,782 @@
+{
+  "list": {
+    "1001": [1, 2, 3, 4, 5],
+    "2018": [1, 2, 3, 4],
+    "9018": [1, 2, 3, 4, 5]
+  },
+  "default": {
+    "id": 2018,
+    "score": 4
+  },
+  "version": 10049500,
+  "music": [
+    {
+      "id": 1001,
+      "name": "お願い ! シンデレラ"
+    },
+    {
+      "id": 1002,
+      "name": "輝く世界の魔法"
+    },
+    {
+      "id": 1003,
+      "name": "We're the friends!"
+    },
+    {
+      "id": 1004,
+      "name": "メッセージ"
+    },
+    {
+      "id": 1005,
+      "name": "ススメ☆オトメ \\n～jewel parade～"
+    },
+    {
+      "id": 1006,
+      "name": "ススメ☆オトメ \\n～jewel parade～"
+    },
+    {
+      "id": 1007,
+      "name": "ススメ☆オトメ \\n～jewel parade～"
+    },
+    {
+      "id": 1008,
+      "name": "ススメ☆オトメ \\n～jewel parade～"
+    },
+    {
+      "id": 1009,
+      "name": "アタシポンコツ\\nアンドロイド"
+    },
+    {
+      "id": 1010,
+      "name": "Nation Blue"
+    },
+    {
+      "id": 1011,
+      "name": "Orange Sapphire"
+    },
+    {
+      "id": 1012,
+      "name": "オルゴールの小箱"
+    },
+    {
+      "id": 1013,
+      "name": "絶対特権\\n主張しますっ !"
+    },
+    {
+      "id": 1014,
+      "name": "パステルピンクな恋"
+    },
+    {
+      "id": 1015,
+      "name": "ゴキゲンParty Night"
+    },
+    {
+      "id": 1016,
+      "name": "ゴキゲンParty Night"
+    },
+    {
+      "id": 1017,
+      "name": "ゴキゲンParty Night"
+    },
+    {
+      "id": 1018,
+      "name": "ゴキゲンParty Night"
+    },
+    {
+      "id": 1019,
+      "name": "ゴキゲンParty Night"
+    },
+    {
+      "id": 1020,
+      "name": "Absolute NIne"
+    },
+    {
+      "id": 1021,
+      "name": "つぼみ"
+    },
+    {
+      "id": 1022,
+      "name": "明日また会えるよね"
+    },
+    {
+      "id": 1023,
+      "name": "咲いてJewel"
+    },
+    {
+      "id": 1024,
+      "name": "きみにいっぱい☆"
+    },
+    {
+      "id": 1025,
+      "name": "Near to You"
+    },
+    {
+      "id": 1026,
+      "name": "Near to You"
+    },
+    {
+      "id": 1027,
+      "name": "Near to You"
+    },
+    {
+      "id": 1028,
+      "name": "Near to You"
+    },
+    {
+      "id": 1029,
+      "name": "EVERMORE"
+    },
+    {
+      "id": 1030,
+      "name": "Treasure☆"
+    },
+    {
+      "id": 1031,
+      "name": "Take me☆Take you"
+    },
+    {
+      "id": 1032,
+      "name": "Take me☆Take you"
+    },
+    {
+      "id": 1033,
+      "name": "キミのそばでずっと"
+    },
+    {
+      "id": 1034,
+      "name": "Halloween♥Code"
+    },
+    {
+      "id": 1035,
+      "name": "秋風に手を振って"
+    },
+    {
+      "id": 1036,
+      "name": "恋が咲く季節"
+    },
+    {
+      "id": 1037,
+      "name": "冬空プレシャス"
+    },
+    {
+      "id": 1038,
+      "name": "キミのそばでずっと"
+    },
+    {
+      "id": 1039,
+      "name": "こいかぜ -花葉-"
+    },
+    {
+      "id": 1040,
+      "name": "always"
+    },
+    {
+      "id": 1041,
+      "name": "Frost"
+    },
+    {
+      "id": 1042,
+      "name": "ツインテールの風"
+    },
+    {
+      "id": 1043,
+      "name": "Tulip\\n（SP VERSION）"
+    },
+    {
+      "id": 1044,
+      "name": "Spring Screaming"
+    },
+    {
+      "id": 1045,
+      "name": "桜の風"
+    },
+    {
+      "id": 1046,
+      "name": "HARURUNRUN"
+    },
+    {
+      "id": 1047,
+      "name": "恋が咲く季節"
+    },
+    {
+      "id": 1048,
+      "name": "always"
+    },
+    {
+      "id": 1049,
+      "name": "銀のイルカと熱い風"
+    },
+    {
+      "id": 1050,
+      "name": "Trust me"
+    },
+    {
+      "id": 1051,
+      "name": "君への詩"
+    },
+    {
+      "id": 1901,
+      "name": "お願い ! シンデレラ"
+    },
+    {
+      "id": 1902,
+      "name": "BEYOND \\nTHE STARLIGHT"
+    },
+    {
+      "id": 1903,
+      "name": "きらりんロボのテーマ"
+    },
+    {
+      "id": 2001,
+      "name": "ラブレター"
+    },
+    {
+      "id": 2002,
+      "name": "Jet to the Future"
+    },
+    {
+      "id": 2003,
+      "name": "あんきら ! ？狂騒曲"
+    },
+    {
+      "id": 2004,
+      "name": "情熱\\nファンファンファーレ"
+    },
+    {
+      "id": 2005,
+      "name": "∀NSWER"
+    },
+    {
+      "id": 2006,
+      "name": "モーレツ★\\n世直しギルティ !"
+    },
+    {
+      "id": 2007,
+      "name": "Kawaii \\nmake MY day!"
+    },
+    {
+      "id": 2008,
+      "name": "双翼の独奏歌"
+    },
+    {
+      "id": 2009,
+      "name": "Twin☆くるっ★テール"
+    },
+    {
+      "id": 2010,
+      "name": "Trinity Field"
+    },
+    {
+      "id": 2011,
+      "name": "美に入り彩を穿つ"
+    },
+    {
+      "id": 2012,
+      "name": "Virgin Love"
+    },
+    {
+      "id": 2013,
+      "name": "凸凹スピードスター"
+    },
+    {
+      "id": 2014,
+      "name": "クレイジークレイジー"
+    },
+    {
+      "id": 2015,
+      "name": "Pretty Liar"
+    },
+    {
+      "id": 2016,
+      "name": "アンデッド・\\nダンスロック"
+    },
+    {
+      "id": 2017,
+      "name": "Sunshine See May"
+    },
+    {
+      "id": 2018,
+      "name": "Palette"
+    },
+    {
+      "id": 3001,
+      "name": "S(mile)ING!"
+    },
+    {
+      "id": 3002,
+      "name": "Never say never"
+    },
+    {
+      "id": 3003,
+      "name": "ミツボシ☆☆★"
+    },
+    {
+      "id": 3004,
+      "name": "風色メロディ"
+    },
+    {
+      "id": 3005,
+      "name": "華蕾夢ミル狂詩曲 \\n～魂ノ導～"
+    },
+    {
+      "id": 3006,
+      "name": "ましゅまろ☆キッス"
+    },
+    {
+      "id": 3007,
+      "name": "あんずのうた"
+    },
+    {
+      "id": 3008,
+      "name": "You're stars \\nshine on me"
+    },
+    {
+      "id": 3009,
+      "name": "DOKIDOKIリズム"
+    },
+    {
+      "id": 3010,
+      "name": "おねだり \\nShall We ～?"
+    },
+    {
+      "id": 3011,
+      "name": "ヴィーナス\\nシンドローム"
+    },
+    {
+      "id": 3012,
+      "name": "Romantic Now"
+    },
+    {
+      "id": 3013,
+      "name": "ショコラ・ティアラ"
+    },
+    {
+      "id": 3014,
+      "name": "Twilight Sky"
+    },
+    {
+      "id": 3015,
+      "name": "TOKIMEKI\\nエスカレート"
+    },
+    {
+      "id": 3016,
+      "name": "こいかぜ"
+    },
+    {
+      "id": 3017,
+      "name": "Naked Romance"
+    },
+    {
+      "id": 3018,
+      "name": "アップルパイ・\\nプリンセス"
+    },
+    {
+      "id": 3019,
+      "name": "Angel Breeze"
+    },
+    {
+      "id": 3020,
+      "name": "熱血乙女A"
+    },
+    {
+      "id": 3021,
+      "name": "メルヘンデビュー !"
+    },
+    {
+      "id": 3022,
+      "name": "To my darling..."
+    },
+    {
+      "id": 3023,
+      "name": "エヴリデイドリーム"
+    },
+    {
+      "id": 3024,
+      "name": "小さな恋の密室事件"
+    },
+    {
+      "id": 3025,
+      "name": "お散歩カメラ"
+    },
+    {
+      "id": 3026,
+      "name": "毒茸伝説"
+    },
+    {
+      "id": 3027,
+      "name": "2nd SIDE"
+    },
+    {
+      "id": 3028,
+      "name": "薄荷 -ハッカ-"
+    },
+    {
+      "id": 3029,
+      "name": "花簪 \\nHANAKANZASHI"
+    },
+    {
+      "id": 3030,
+      "name": "ミラクルテレパシー"
+    },
+    {
+      "id": 3031,
+      "name": "Bright Blue"
+    },
+    {
+      "id": 3032,
+      "name": "気持ちいいよね　\\n一等賞 !"
+    },
+    {
+      "id": 3033,
+      "name": "き・ま・ぐ・れ☆\\nCafé au lait !"
+    },
+    {
+      "id": 3034,
+      "name": "Hotel Moonside"
+    },
+    {
+      "id": 3035,
+      "name": "みんなのきもち"
+    },
+    {
+      "id": 3036,
+      "name": "in fact"
+    },
+    {
+      "id": 3037,
+      "name": "Can't Stop!!"
+    },
+    {
+      "id": 3038,
+      "name": "秘密のトワレ"
+    },
+    {
+      "id": 3039,
+      "name": "青の一番星"
+    },
+    {
+      "id": 3040,
+      "name": "ラヴィアンローズ"
+    },
+    {
+      "id": 3041,
+      "name": "Radio Happy"
+    },
+    {
+      "id": 3042,
+      "name": "恋色エナジー"
+    },
+    {
+      "id": 3043,
+      "name": "共鳴世界の存在論"
+    },
+    {
+      "id": 3044,
+      "name": "lilac time"
+    },
+    {
+      "id": 3045,
+      "name": "恋のHamburg♪"
+    },
+    {
+      "id": 3046,
+      "name": "追い風Running"
+    },
+    {
+      "id": 3047,
+      "name": "One Life"
+    },
+    {
+      "id": 3048,
+      "name": "祈りの花"
+    },
+    {
+      "id": 3049,
+      "name": "楽園"
+    },
+    {
+      "id": 3050,
+      "name": "Last Kiss"
+    },
+    {
+      "id": 3051,
+      "name": "おんなの道は星の道"
+    },
+    {
+      "id": 5001,
+      "name": "Star!!"
+    },
+    {
+      "id": 5002,
+      "name": "夕映えプレゼント"
+    },
+    {
+      "id": 5003,
+      "name": "GOIN'!!!"
+    },
+    {
+      "id": 5004,
+      "name": "できたて \\nEvo! Revo! Generation!"
+    },
+    {
+      "id": 5005,
+      "name": "Happy×2 Days"
+    },
+    {
+      "id": 5006,
+      "name": "-LEGNE- \\n仇なす剣 光の旋律"
+    },
+    {
+      "id": 5007,
+      "name": "Memories"
+    },
+    {
+      "id": 5008,
+      "name": "ØωØver!!"
+    },
+    {
+      "id": 5009,
+      "name": "LET'S GO HAPPY!!"
+    },
+    {
+      "id": 5010,
+      "name": "Shine!!"
+    },
+    {
+      "id": 5011,
+      "name": "夢色ハーモニー"
+    },
+    {
+      "id": 5013,
+      "name": "私色ギフト"
+    },
+    {
+      "id": 5014,
+      "name": "Heart Voice"
+    },
+    {
+      "id": 5015,
+      "name": "Rockin' Emotion"
+    },
+    {
+      "id": 5017,
+      "name": "Wonder goes on!!"
+    },
+    {
+      "id": 5018,
+      "name": "この空の下"
+    },
+    {
+      "id": 5021,
+      "name": "Trancing Pulse"
+    },
+    {
+      "id": 5024,
+      "name": "流れ星キセキ"
+    },
+    {
+      "id": 5025,
+      "name": "M@GIC☆"
+    },
+    {
+      "id": 5026,
+      "name": "Nocturne"
+    },
+    {
+      "id": 5027,
+      "name": "shabon song"
+    },
+    {
+      "id": 5028,
+      "name": "STORY"
+    },
+    {
+      "id": 5029,
+      "name": "あいくるしい"
+    },
+    {
+      "id": 5030,
+      "name": "Flip Flop"
+    },
+    {
+      "id": 5031,
+      "name": "Lunatic Show"
+    },
+    {
+      "id": 5032,
+      "name": "キラッ ! 満開スマイル"
+    },
+    {
+      "id": 5033,
+      "name": "エチュードは1曲だけ"
+    },
+    {
+      "id": 5034,
+      "name": "SUN♡FLOWER"
+    },
+    {
+      "id": 7003,
+      "name": "shabon song \\n～For SS3A rearrange Mix～"
+    },
+    {
+      "id": 7004,
+      "name": "Nocturne \\n～For SS3A rearrange Mix～"
+    },
+    {
+      "id": 7005,
+      "name": "Flip Flop \\n～For SS3A rearrange Mix～"
+    },
+    {
+      "id": 7006,
+      "name": "あいくるしい \\n～For SS3A rearrange Mix～"
+    },
+    {
+      "id": 7007,
+      "name": "Lunatic Show \\n～For SS3A rearrange Mix～"
+    },
+    {
+      "id": 7008,
+      "name": "輝く世界の魔法 \\n-Magical Step Forward Remix-"
+    },
+    {
+      "id": 7009,
+      "name": "ゴキゲンParty Night \\n-Dance!!!!!!!!!!!!!!! Remix-"
+    },
+    {
+      "id": 7010,
+      "name": "Near to You \\n-PicoPico D'n'B Remix-"
+    },
+    {
+      "id": 8001,
+      "name": "キミとボクのミライ"
+    },
+    {
+      "id": 8002,
+      "name": "エンジェル ドリーム"
+    },
+    {
+      "id": 8003,
+      "name": "夏色"
+    },
+    {
+      "id": 8004,
+      "name": "サヨナラバス"
+    },
+    {
+      "id": 8005,
+      "name": "LOVE & PEACH"
+    },
+    {
+      "id": 8007,
+      "name": "HOT LIMIT"
+    },
+    {
+      "id": 8008,
+      "name": "行くぜっ ! 怪盗少女"
+    },
+    {
+      "id": 8009,
+      "name": "友達の唄"
+    },
+    {
+      "id": 9001,
+      "name": "とどけ ! アイドル"
+    },
+    {
+      "id": 9002,
+      "name": "Snow Wings"
+    },
+    {
+      "id": 9003,
+      "name": "Tulip"
+    },
+    {
+      "id": 9004,
+      "name": "ハイファイ☆デイズ"
+    },
+    {
+      "id": 9005,
+      "name": "生存本能\\nヴァルキュリア"
+    },
+    {
+      "id": 9006,
+      "name": "純情Midnight伝説"
+    },
+    {
+      "id": 9007,
+      "name": "Love∞Destiny"
+    },
+    {
+      "id": 9008,
+      "name": "サマカニ ! !"
+    },
+    {
+      "id": 9009,
+      "name": "BEYOND \\nTHE STARLIGHT"
+    },
+    {
+      "id": 9010,
+      "name": "命燃やして恋せよ乙女"
+    },
+    {
+      "id": 9011,
+      "name": "Sweet Witches' Night \\n～6人目はだぁれ～"
+    },
+    {
+      "id": 9012,
+      "name": "桜の頃"
+    },
+    {
+      "id": 9013,
+      "name": "Nothing but You"
+    },
+    {
+      "id": 9014,
+      "name": "With Love"
+    },
+    {
+      "id": 9015,
+      "name": "リトルリドル"
+    },
+    {
+      "id": 9016,
+      "name": "イリュージョニスタ !"
+    },
+    {
+      "id": 9017,
+      "name": "Happy New Yeah!"
+    },
+    {
+      "id": 9018,
+      "name": "ガールズ・イン・\\nザ・フロンティア"
+    },
+    {
+      "id": 9019,
+      "name": "ドレミファクトリー !"
+    },
+    {
+      "id": 9020,
+      "name": "Starry-Go-Round"
+    },
+    {
+      "id": 9021,
+      "name": "ガールズ・イン・\\nザ・フロンティア"
+    },
+    {
+      "id": 9901,
+      "name": "Yes! Party Time!!"
+    },
+    {
+      "id": 9902,
+      "name": "Yes! Party Time!!"
+    },
+    {
+      "id": 9903,
+      "name": "Vast world"
+    },
+    {
+      "id": 90001,
+      "name": "ぴにゃリクエスト"
+    }
+  ]
+}
