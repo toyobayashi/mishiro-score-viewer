@@ -19,18 +19,27 @@ interface Option {
   speed: number
 }
 
-let id = '2018'
-let difficulty = '4'
+// let id: number
+// let difficulty: number
+// let data: any
 
 class ScoreViewer {
 
+  private static _id: number
+  private static _difficulty: number
+  private static _data: any
+  private static _name: string
+
   public static async main (): Promise<void> {
-    id = Global.getQuery('id') || '2018'
-    difficulty = Global.getQuery('difficulty') || '4'
-    const data = (await axios.get(`./res/${id}-${difficulty}.csv`)).data
-    const { fullCombo, score } = Global.createScore(data)
+    ScoreViewer._data = (await axios.get('./data.json')).data
+    ScoreViewer._id = Number(Global.getQuery('id')) || ScoreViewer._data.default.id
+    ScoreViewer._difficulty = Number(Global.getQuery('difficulty')) || ScoreViewer._data.default.score
+    ScoreViewer._name = ScoreViewer._data.music.find((live: { id: number; name: string }) => live.id === ScoreViewer._id).name
+    document.getElementsByTagName('title')[0].innerHTML = ScoreViewer._name
+    const csv = (await axios.get(`./res/${ScoreViewer._id}-${ScoreViewer._difficulty}.csv`)).data
+    const { fullCombo, score } = Global.createScore(csv)
     ScoreViewer.init({
-      src: `./res/${id}.mp3`,
+      src: `./res/${ScoreViewer._id}.mp3`,
       fullCombo,
       score
     }, document.body)
@@ -386,7 +395,7 @@ class ScoreViewer {
       // })
 
       const a = document.createElement('a')
-      a.download = `${id}-${difficulty}.png`
+      a.download = `${ScoreViewer._id}-${ScoreViewer._difficulty}.png`
       a.href = URL.createObjectURL(blob)
       const event = new MouseEvent('click', {
         view: window,
