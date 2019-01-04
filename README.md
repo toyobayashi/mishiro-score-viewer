@@ -19,9 +19,9 @@ $ npm start
 Place live song (.mp3) and score (.csv) in `docs/res`,  
 rename mp3 to `${id}.mp3`,  
 rename csv to `${id}-${difficulty}.csv`,  
-then open `http://localhost:9080/?id=${id}&difficulty=${difficulty}` in **Chrome** / **Firefox**
+add `list` field in `docs/data.json`,  
+then open `http://localhost:9080/` in **Chrome** / **Firefox**.
 
-Default `id`: `9018`  
-Default `difficulty`: `5`
+local development port can be changed in `script/config.json`.
 
 Desktop application: [mishiro](https://github.com/toyobayashi/mishiro)

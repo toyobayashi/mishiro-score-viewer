@@ -10,7 +10,8 @@ const webpackConfig: Configuration = {
   mode,
   context: getPath(),
   entry: {
-    main: [getPath('./src/index.ts')]
+    main: [getPath('./src/index.ts')],
+    score: [getPath('./src/score.ts')]
   },
   output: {
     filename: '[name].js',
@@ -88,9 +89,16 @@ const webpackConfig: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Score',
+      title: 'mishiro-score-viewer',
+      filename: 'index.html',
       template: getPath('./src/index.html'),
       chunks: ['main', 'dll', 'common']
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Score',
+      filename: 'score.html',
+      template: getPath('./src/score.html'),
+      chunks: ['score', 'dll', 'common']
     })
   ],
   optimization: {
