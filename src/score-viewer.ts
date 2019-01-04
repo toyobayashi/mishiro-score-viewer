@@ -531,9 +531,9 @@ class ScoreViewer {
       this.pauseButton.className = 'cgss-btn cgss-btn-ok'
     })
 
-    this.audio.addEventListener('ended', () => {
-      window.close()
-    }, false)
+    // this.audio.addEventListener('ended', () => {
+    //   window.close()
+    // }, false)
 
     this.audio.addEventListener('timeupdate', () => {
       this.rangeInput.value = this.audio.currentTime.toString()
