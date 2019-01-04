@@ -22,6 +22,15 @@ rename csv to `${id}-${difficulty}.csv`,
 add `list` field in `docs/data.json`,  
 then open `http://localhost:9080/` in **Chrome** / **Firefox**.
 
-local development port can be changed in `script/config.json`.
+Local development port can be changed in `script/config.json`.  
 
-Desktop application: [mishiro](https://github.com/toyobayashi/mishiro)
+Use [mishiro desktop application](https://github.com/toyobayashi/mishiro) to have a better experience.
+
+把MP3文件和CSV文件都放在 `docs/res`，  
+按照上面的格式重命名对应的音乐和谱面，  
+并在 `docs/data.json` 的 `list` 下添加ID和谱面难度，  
+在 **Chrome** 或 **Firefox** 中打开`http://localhost:9080/`。
+
+本地开发环境的端口可以在 `script/config.json` 中更改。
+
+推荐使用 [mishiro 桌面应用](https://github.com/toyobayashi/mishiro) 获得更好的体验。
