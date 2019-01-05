@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mishiro-score-viewer</title>
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <style>
       .text-center {
         text-align:center;
@@ -14,6 +14,15 @@
         height: 25px;
         line-height: 25px;
         font-size: 15px;
+      }
+
+      .a, .a:visited {
+        color: #0366d6;
+        text-decoration: none;
+      }
+
+      .a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -26,6 +35,10 @@
     <div class="text-center"><select class="select" name="live" id="live"></select></div>
     <div class="text-center" style="margin-top:20px;"><select class="select" name="difficulty" id="difficulty"></select></div>
 
-    <div style="text-align:center;margin-top:20px;"><button id="go" style="width: 20%;height: 50px;font-size: 20px;">GO</button></div>
+    <div style="text-align:center;margin:20px 0;"><button id="go" style="width: 20%;height: 50px;font-size: 20px;">GO</button></div>
+
+    <p class="text-center">Resource version: <span id="resver">loading...</span></p>
+    <p class="text-center">Latest update time: 2019-01-05T08:32:59.188Z</p>
+    <p class="text-center"><a href="https://github.com/toyobayashi/mishiro" target="_blank" class="a">mishiro desktop application</a></p>
   <script type="text/javascript" src="dll.js"></script><script type="text/javascript" src="main.js"></script></body>
 </html>

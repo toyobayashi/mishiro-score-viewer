@@ -15,6 +15,15 @@
         line-height: 25px;
         font-size: 15px;
       }
+
+      .a, .a:visited {
+        color: #0366d6;
+        text-decoration: none;
+      }
+
+      .a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -26,6 +35,10 @@
     <div class="text-center"><select class="select" name="live" id="live"></select></div>
     <div class="text-center" style="margin-top:20px;"><select class="select" name="difficulty" id="difficulty"></select></div>
 
-    <div style="text-align:center;margin-top:20px;"><button id="go" style="width: 20%;height: 50px;font-size: 20px;">GO</button></div>
+    <div style="text-align:center;margin:20px 0;"><button id="go" style="width: 20%;height: 50px;font-size: 20px;">GO</button></div>
+
+    <p class="text-center">Resource version: <span id="resver">loading...</span></p>
+    <p class="text-center">Latest update time: <%= htmlWebpackPlugin.options.param.time %></p>
+    <p class="text-center"><a href="https://github.com/toyobayashi/mishiro" target="_blank" class="a">mishiro desktop application</a></p>
   </body>
 </html>

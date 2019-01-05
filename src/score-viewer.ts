@@ -19,10 +19,6 @@ interface Option {
   speed: number
 }
 
-// let id: number
-// let difficulty: number
-// let data: any
-
 class ScoreViewer {
 
   private static _id: number
@@ -34,7 +30,8 @@ class ScoreViewer {
     ScoreViewer._data = (await axios.get('./data.json')).data
     ScoreViewer._id = Number(Global.getQuery('id')) || ScoreViewer._data.default.id
     ScoreViewer._difficulty = Number(Global.getQuery('difficulty')) || ScoreViewer._data.default.score
-    ScoreViewer._name = ScoreViewer._data.music.find((live: { id: number; name: string }) => live.id === ScoreViewer._id).name
+    const live = ScoreViewer._data.music.find((live: { id: number; name: string }) => live.id === ScoreViewer._id)
+    ScoreViewer._name = live ? live.name.replace(/\\n/g, '') : 'Score'
     document.getElementsByTagName('title')[0].innerHTML = ScoreViewer._name
     const csv = (await axios.get(`./res/${ScoreViewer._id}-${ScoreViewer._difficulty}.csv`)).data
     const { fullCombo, score } = Global.createScore(csv)

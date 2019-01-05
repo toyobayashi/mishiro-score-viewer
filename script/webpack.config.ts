@@ -90,6 +90,9 @@ const webpackConfig: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'mishiro-score-viewer',
+      param: {
+        time: new Date().toISOString()
+      },
       filename: 'index.html',
       template: getPath('./src/index.html'),
       chunks: ['main', 'dll', 'common']

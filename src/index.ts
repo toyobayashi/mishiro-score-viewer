@@ -5,6 +5,7 @@ class Home {
   private static _liveSelect: HTMLSelectElement
   private static _difficultySelect: HTMLSelectElement
   private static _goButton: HTMLButtonElement
+  private static _resver: HTMLSpanElement
 
   private static _difficultyMap = {
     '1': 'Debut',
@@ -15,15 +16,21 @@ class Home {
   }
 
   public static async main (): Promise<void> {
-    Home._data = (await axios.get('./data.json')).data
-    Home._liveSelect = document.getElementById('live') as HTMLSelectElement
-    Home._difficultySelect = document.getElementById('difficulty') as HTMLSelectElement
-    Home._goButton = document.getElementById('go') as HTMLButtonElement
-    Home._addEventListener()
-    Home._render()
+    try {
+      Home._data = (await axios.get('./data.json')).data
+      Home._liveSelect = document.getElementById('live') as HTMLSelectElement
+      Home._difficultySelect = document.getElementById('difficulty') as HTMLSelectElement
+      Home._goButton = document.getElementById('go') as HTMLButtonElement
+      Home._resver = document.getElementById('resver') as HTMLSpanElement
+      Home._addEventListener()
+      Home._render()
+    } catch (err) {
+      Home._resver.innerHTML = 'unknown'
+    }
   }
 
   private static _render () {
+    Home._resver.innerHTML = Home._data.version
     const liveIds: string[] = Object.keys(Home._data.list)
     for (let i = 0; i < liveIds.length; i++) {
       const option = document.createElement('option')
@@ -32,9 +39,11 @@ class Home {
         option.selected = true
         Home._refreshDifficulty(liveIds[i])
       }
-      option.innerHTML = Home._data.music.find((live: { id: number; name: string }) => live.id === Number(liveIds[i])).name
+      const live = Home._data.music.find((live: { id: number; name: string }) => live.id === Number(liveIds[i]))
+      option.innerHTML = live ? live.name.replace(/\\n/g, '') : liveIds[i]
       Home._liveSelect.appendChild(option)
     }
+    Home._difficultySelect.style.width = Home._liveSelect.offsetWidth + 'px'
   }
 
   private static _addEventListener () {
