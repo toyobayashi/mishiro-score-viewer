@@ -146,16 +146,23 @@ class Global {
     return Global._instance
   }
 
+  public static play (audio: HTMLAudioElement) {
+    const playReturn = audio.play()
+    if (playReturn && playReturn.catch) {
+      playReturn.catch(err => console.log(err))
+    }
+  }
+
   public playSe () {
     if (this._se) {
       this._se.currentTime = 0
-      this._se.play().catch(err => console.log(err))
+      Global.play(this._se)
     }
   }
   public playSeOk () {
     if (this._seOk) {
       this._seOk.currentTime = 0
-      this._seOk.play().catch(err => console.log(err))
+      Global.play(this._seOk)
     }
   }
 }

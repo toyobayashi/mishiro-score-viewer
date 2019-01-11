@@ -196,7 +196,7 @@ class ScoreViewer {
       return
     }
 
-    this.audio.play().catch(err => console.log(err))
+    Global.play(this.audio)
 
     const self = this
 
