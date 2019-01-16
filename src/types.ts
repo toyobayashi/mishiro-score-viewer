@@ -1,3 +1,5 @@
+import 'cordova-plugin-file'
+
 export interface ScoreNote {
   sec: number // music time
   type: 1 | 2 | 3 // 1: tap / flip 2: hold 3: hold + move

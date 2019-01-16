@@ -17,6 +17,12 @@ class Home {
 
   public static async main (): Promise<void> {
     try {
+      if (window.cordova) {
+        window.screen.orientation.lock('portrait').catch(err => {
+          console.log(err.message)
+          console.log(err.stack)
+        })
+      }
       Home._data = (await axios.get('./data.json')).data
       Home._liveSelect = document.getElementById('live') as HTMLSelectElement
       Home._difficultySelect = document.getElementById('difficulty') as HTMLSelectElement
@@ -25,6 +31,7 @@ class Home {
       Home._addEventListener()
       Home._render()
     } catch (err) {
+      console.log(err)
       Home._resver.innerHTML = 'unknown'
     }
   }
@@ -49,7 +56,7 @@ class Home {
   private static _addEventListener () {
     Home._goButton.addEventListener('click', () => {
       // console.log(`${window.location.protocol}//${window.location.host}${window.location.pathname}score.html?id=${Home._liveSelect.value}&difficulty=${Home._difficultySelect.value}`)
-      window.location.href = `${window.location.protocol}//${window.location.host}${window.location.pathname}score.html${Home._liveSelect.value && Home._difficultySelect.value ? `?id=${Home._liveSelect.value}&difficulty=${Home._difficultySelect.value}` : ''}`
+      window.location.href = `${window.location.protocol}//${window.location.host}${window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/') + 1)}score.html${Home._liveSelect.value && Home._difficultySelect.value ? `?id=${Home._liveSelect.value}&difficulty=${Home._difficultySelect.value}` : ''}`
     }, false)
     Home._liveSelect.addEventListener('change', (e) => {
       console.log((e.target as HTMLSelectElement).value)
@@ -75,4 +82,11 @@ class Home {
   }
 }
 
-Home.main()
+if (window.cordova) {
+  document.addEventListener('deviceready', () => {
+    Home.main()
+    console.log(window.cordova.file)
+  })
+} else {
+  Home.main()
+}

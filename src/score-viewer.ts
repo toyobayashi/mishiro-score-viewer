@@ -27,6 +27,12 @@ class ScoreViewer {
   private static _name: string
 
   public static async main (): Promise<void> {
+    if (window.cordova) {
+      window.screen.orientation.lock('landscape').catch(err => {
+        console.log(err.message)
+        console.log(err.stack)
+      })
+    }
     ScoreViewer._data = (await axios.get('./data.json')).data
     ScoreViewer._id = Number(Global.getQuery('id')) || ScoreViewer._data.default.id
     ScoreViewer._difficulty = Number(Global.getQuery('difficulty')) || ScoreViewer._data.default.score
@@ -391,16 +397,22 @@ class ScoreViewer {
       //   if (err) alert(err.message)
       // })
 
-      const a = document.createElement('a')
-      a.download = `${ScoreViewer._id}-${ScoreViewer._difficulty}.png`
-      a.href = URL.createObjectURL(blob)
-      const event = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-      })
-      a.dispatchEvent(event)
-      a.remove()
+      if (window.cordova) {
+        const { writeFile } = await import('./cordova-fs')
+        await writeFile(`${window.cordova.file.externalDataDirectory}${ScoreViewer._id}-${ScoreViewer._difficulty}.png`, blob)
+        ;(cordova.plugins as any).MyToast.toast('Success', 'short', () => console.log('toast'), (e: Error) => console.log(e))
+      } else {
+        const a = document.createElement('a')
+        a.download = `${ScoreViewer._id}-${ScoreViewer._difficulty}.png`
+        a.href = URL.createObjectURL(blob)
+        const event = new MouseEvent('click', {
+          view: window,
+          bubbles: true,
+          cancelable: true
+        })
+        a.dispatchEvent(event)
+        a.remove()
+      }
     }
 
     await _drawAndSave()

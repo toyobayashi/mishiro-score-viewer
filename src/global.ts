@@ -87,6 +87,14 @@ class Global {
     return { fullCombo, score }
   }
 
+  public static getCordova (): Cordova | undefined {
+    return window.cordova
+  }
+
+  public static isCordova (): boolean {
+    return !!(Global.getCordova())
+  }
+
   public static getQuery (key: string) {
     if (Global._query) return Global._query[key]
     Global._query = {}

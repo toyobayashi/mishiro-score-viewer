@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-mytoast" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>MyToast</name>
+    <js-module name="MyToast" src="www/MyToast.js">
+        <clobbers target="cordova.plugins.MyToast" />
+    </js-module>
+
+    <platform name="android">
+        <source-file src="src/android/MyToast.java" target-dir="src/com/github/toyobayashi/toast/" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MyToast">
+                <param name="android-package" value="com.github.toyobayashi.toast.MyToast" />
+            </feature>
+        </config-file>
+    </platform>
+</plugin>

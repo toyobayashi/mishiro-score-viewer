@@ -119,9 +119,11 @@ const webpackConfig: Configuration = {
 }
 
 if (mode === 'production') {
+  webpackConfig.devtool = 'inline-source-map'
   const uglifyJS = () => new UglifyJSPlugin({
     parallel: true,
     cache: true,
+    sourceMap: true,
     uglifyOptions: {
       output: {
         comments: false
