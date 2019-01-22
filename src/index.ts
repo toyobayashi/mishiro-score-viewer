@@ -49,7 +49,7 @@ class Home {
   private static _addEventListener () {
     Home._goButton.addEventListener('click', () => {
       // console.log(`${window.location.protocol}//${window.location.host}${window.location.pathname}score.html?id=${Home._liveSelect.value}&difficulty=${Home._difficultySelect.value}`)
-      window.location.href = `${window.location.protocol}//${window.location.host}${window.location.pathname}score.html${Home._liveSelect.value && Home._difficultySelect.value ? `?id=${Home._liveSelect.value}&difficulty=${Home._difficultySelect.value}` : ''}`
+      window.location.href = `${window.location.protocol}//${window.location.host}${window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/') + 1)}score.html${Home._liveSelect.value && Home._difficultySelect.value ? `?id=${Home._liveSelect.value}&difficulty=${Home._difficultySelect.value}` : ''}`
     }, false)
     Home._liveSelect.addEventListener('change', (e) => {
       console.log((e.target as HTMLSelectElement).value)
