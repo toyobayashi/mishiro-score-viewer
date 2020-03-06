@@ -28,6 +28,30 @@
       4,
       5
     ],
+    "8036": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "8037": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "8038": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "8039": [
+      1,
+      2,
+      3,
+      4
+    ],
     "9018": [
       1,
       2,
@@ -37,8 +61,8 @@
     ]
   },
   "default": {
-    "id": 2020,
-    "score": 5
+    "id": 8036,
+    "score": 4
   },
   "version": 10050800,
   "music": [
@@ -60,15 +84,15 @@
     },
     {
       "id": 1005,
-      "name": "ススメ☆オトメ \\n～jewel parade～"
+      "name": "ススメ☆オトメ ～jewel parade～\\n（CUTE VERSION）"
     },
     {
       "id": 1006,
-      "name": "ススメ☆オトメ \\n～jewel parade～"
+      "name": "ススメ☆オトメ ～jewel parade～\\n（COOL VERSION）"
     },
     {
       "id": 1007,
-      "name": "ススメ☆オトメ \\n～jewel parade～"
+      "name": "ススメ☆オトメ ～jewel parade～\\n（PASSION VERSION）"
     },
     {
       "id": 1008,
@@ -100,15 +124,15 @@
     },
     {
       "id": 1015,
-      "name": "ゴキゲンParty Night"
+      "name": "ゴキゲンParty Night\\n（CUTE VERSION）"
     },
     {
       "id": 1016,
-      "name": "ゴキゲンParty Night"
+      "name": "ゴキゲンParty Night\\n（COOL VERSION）"
     },
     {
       "id": 1017,
-      "name": "ゴキゲンParty Night"
+      "name": "ゴキゲンParty Night\\n（PASSION VERSION）"
     },
     {
       "id": 1018,
@@ -140,15 +164,15 @@
     },
     {
       "id": 1025,
-      "name": "Near to You"
+      "name": "Near to You\\n（CUTE VERSION）"
     },
     {
       "id": 1026,
-      "name": "Near to You"
+      "name": "Near to You\\n（COOL VERSION）"
     },
     {
       "id": 1027,
-      "name": "Near to You"
+      "name": "Near to You\\n（PASSION VERSION）"
     },
     {
       "id": 1028,
@@ -247,6 +271,34 @@
       "name": "君への詩"
     },
     {
+      "id": 1052,
+      "name": "未完成の歴史"
+    },
+    {
+      "id": 1053,
+      "name": "夏恋 -NATSU KOI-"
+    },
+    {
+      "id": 1054,
+      "name": "空想探査計画"
+    },
+    {
+      "id": 1055,
+      "name": "Sun! High! Gold!"
+    },
+    {
+      "id": 1056,
+      "name": "夢をのぞいたら"
+    },
+    {
+      "id": 1057,
+      "name": "夢をのぞいたら\\n（for BEST3 VERSION）"
+    },
+    {
+      "id": 1201,
+      "name": "お願い ! シンデレラ\\n（GRAND VERSION）"
+    },
+    {
       "id": 1901,
       "name": "お願い ! シンデレラ"
     },
@@ -257,6 +309,10 @@
     {
       "id": 1903,
       "name": "きらりんロボのテーマ"
+    },
+    {
+      "id": 1904,
+      "name": "∀NSWER \\n〜ののの物語〜"
     },
     {
       "id": 2001,
@@ -331,12 +387,52 @@
       "name": "Palette"
     },
     {
+      "id": 2019,
+      "name": "Needle Light"
+    },
+    {
       "id": 2020,
       "name": "義勇忍侠花吹雪"
     },
     {
       "id": 2021,
       "name": "スパイスパラダイス"
+    },
+    {
+      "id": 2022,
+      "name": "Fascinate"
+    },
+    {
+      "id": 2023,
+      "name": "O-Ku-Ri-Mo-No \\nSunday!"
+    },
+    {
+      "id": 2024,
+      "name": "バベル"
+    },
+    {
+      "id": 2025,
+      "name": "ステップ＆スキップ"
+    },
+    {
+      "id": 2026,
+      "name": "Gossip Club"
+    },
+    {
+      "id": 2027,
+      "name": "Secret Daybreak"
+    },
+    {
+      "id": 2028,
+      "name": "ギュっとMilky Way"
+    },
+    {
+      "id": 2029,
+      "name": "幸せの法則 \\n～ルール～"
+    },
+    {
+      "id": 2030,
+      "name": "Gaze and Gaze"
     },
     {
       "id": 3001,
@@ -543,6 +639,42 @@
       "name": "おんなの道は星の道"
     },
     {
+      "id": 3052,
+      "name": "谷の底で咲く花は"
+    },
+    {
+      "id": 3053,
+      "name": "もりのくにから"
+    },
+    {
+      "id": 3054,
+      "name": "しゅがーはぁと☆\\nレボリューション"
+    },
+    {
+      "id": 3201,
+      "name": "はにかみdays"
+    },
+    {
+      "id": 3202,
+      "name": "AnemoneStar"
+    },
+    {
+      "id": 3203,
+      "name": "ステップ !"
+    },
+    {
+      "id": 3204,
+      "name": "ニャンと☆\\nスペクタクル"
+    },
+    {
+      "id": 3205,
+      "name": "SUPERLOVE☆"
+    },
+    {
+      "id": 3206,
+      "name": "NUDIE★"
+    },
+    {
       "id": 5001,
       "name": "Star!!"
     },
@@ -607,6 +739,10 @@
       "name": "この空の下"
     },
     {
+      "id": 5020,
+      "name": "Nebula Sky"
+    },
+    {
       "id": 5021,
       "name": "Trancing Pulse"
     },
@@ -657,6 +793,18 @@
     {
       "id": 5034,
       "name": "SUN♡FLOWER"
+    },
+    {
+      "id": 5035,
+      "name": "きゅん・きゅん・\\nまっくす"
+    },
+    {
+      "id": 5036,
+      "name": "Max Beat"
+    },
+    {
+      "id": 5037,
+      "name": "TAKAMARI☆\\nCLIMAXXX!!!!!"
     },
     {
       "id": 7003,
@@ -711,6 +859,10 @@
       "name": "LOVE & PEACH"
     },
     {
+      "id": 8006,
+      "name": "タッタ"
+    },
+    {
       "id": 8007,
       "name": "HOT LIMIT"
     },
@@ -725,6 +877,118 @@
     {
       "id": 8010,
       "name": "虹"
+    },
+    {
+      "id": 8011,
+      "name": "スターラブレイション"
+    },
+    {
+      "id": 8012,
+      "name": "ツバサ"
+    },
+    {
+      "id": 8013,
+      "name": "LIFE"
+    },
+    {
+      "id": 8014,
+      "name": "♡桃色片想い♡"
+    },
+    {
+      "id": 8015,
+      "name": "Hello Especially"
+    },
+    {
+      "id": 8016,
+      "name": "全力☆Summer!"
+    },
+    {
+      "id": 8017,
+      "name": "亜麻色の髪の乙女"
+    },
+    {
+      "id": 8018,
+      "name": "紅"
+    },
+    {
+      "id": 8019,
+      "name": "ハミングがきこえる"
+    },
+    {
+      "id": 8020,
+      "name": "はじめてのチュウ"
+    },
+    {
+      "id": 8022,
+      "name": "YELLOW YELLOW \\nHAPPY"
+    },
+    {
+      "id": 8023,
+      "name": "HIGH PRESSURE"
+    },
+    {
+      "id": 8024,
+      "name": "君の青春は\\n輝いているか"
+    },
+    {
+      "id": 8025,
+      "name": "RAGE OF DUST"
+    },
+    {
+      "id": 8026,
+      "name": "風になりたい"
+    },
+    {
+      "id": 8027,
+      "name": "大きな古時計"
+    },
+    {
+      "id": 8028,
+      "name": "COLORS"
+    },
+    {
+      "id": 8029,
+      "name": "モザイクカケラ"
+    },
+    {
+      "id": 8030,
+      "name": "O2"
+    },
+    {
+      "id": 8031,
+      "name": "Revive"
+    },
+    {
+      "id": 8032,
+      "name": "EZ DO DANCE"
+    },
+    {
+      "id": 8033,
+      "name": "WHITE BREATH"
+    },
+    {
+      "id": 8034,
+      "name": "学園天国"
+    },
+    {
+      "id": 8035,
+      "name": "STAR"
+    },
+    {
+      "id": 8036,
+      "name": "Butter-Fly"
+    },
+    {
+      "id": 8037,
+      "name": "brave heart"
+    },
+    {
+      "id": 8038,
+      "name": "I wish"
+    },
+    {
+      "id": 8039,
+      "name": "離れていても"
     },
     {
       "id": 9001,
@@ -811,6 +1075,30 @@
       "name": "ガールズ・イン・\\nザ・フロンティア"
     },
     {
+      "id": 9022,
+      "name": "無重力シャトル"
+    },
+    {
+      "id": 9023,
+      "name": "comic cosmic"
+    },
+    {
+      "id": 9024,
+      "name": "TRUE COLORS"
+    },
+    {
+      "id": 9025,
+      "name": "ミラーボール・ラブ"
+    },
+    {
+      "id": 9026,
+      "name": "印象"
+    },
+    {
+      "id": 9027,
+      "name": "Unlock Starbeat"
+    },
+    {
       "id": 9901,
       "name": "Yes! Party Time!!"
     },
@@ -821,6 +1109,22 @@
     {
       "id": 9903,
       "name": "Vast world"
+    },
+    {
+      "id": 9904,
+      "name": "Stage Bye Stage"
+    },
+    {
+      "id": 9906,
+      "name": "青空エール"
+    },
+    {
+      "id": 9907,
+      "name": "炎の華"
+    },
+    {
+      "id": 9908,
+      "name": "LOVE☆ハズカム"
     },
     {
       "id": 90001,

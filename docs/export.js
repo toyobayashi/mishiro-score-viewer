@@ -26,6 +26,7 @@ musicData.forEach(music => {
   delete music.name_sort
   delete music.sound_length
   delete music.sound_offset
+  delete music.music_category
 })
 
 writeFileSync(join(__dirname, DATA_JSON), JSON.stringify(Object.assign({}, dataJson, { music: musicData }), null, 2) + '\n')
